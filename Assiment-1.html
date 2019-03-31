@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8" />
+       <title>JavaScript</title>
+   </head>
+   <body>
+       <h1> JavaScript</h1>
+       <script type = "text/JavaScript">
+           var house = {
+                       areas: [{
+                               livingRoom : {
+                                  items: ['tv','sofa']
+                               },
+                               bedroomOne: {
+                                       items: ['bed','washing machine'],
+                                       windows: 3
+                               },
+                               bedroomTwo: {
+                                       items: ['bed','bed','desk'],
+                                       windows: 4
+                               },
+                               kitchen: {
+                                       items: ['fridge','broken chair']
+                               }
+                       }],
+                       garden: [true, 'Red Rose'],
+                       garage: {
+                               car: {
+                                   color: 'red',
+                                   wheels: 4,
+                                   honk: ()=>{alert("Beep")}
+                               }
+                       }
+           }
+// Find total number of areas in the house
+  let i= house.areas[0]).length;
+
+// Add a dining table to the living room
+           house.areas[0].livingRoom.items.push('dining table');
+
+// Add a stove to the kitchen
+           house.areas[0].kitchen.items.push('stove');
+
+// Remove the washing machine from bedroomOne
+   house.areas[0].bedroomOne.items.pop();
+
+// Find the total number of beds in all rooms
+           let x = 0;
+           for(let i=0;i<house.areas[0].bedroomOne.items.length;i++)
+           {
+              if(house.areas[0].bedroomOne.items[i] == 'bed')
+              x++;
+           }
+
+           for(let i=0;i<house.areas[0].bedroomTwo.items.length;i++)
+           {
+              if(house.areas[0].bedroomTwo.items[i] == 'bed')
+              x++;
+           }
+           console.log("Total number of beds in all rooms :",x);
+
+// Change the color of the car to blue
+           house.garage.car.color = 'blue';
+
+// Add a another car to the garage with a honk function
+           var car2= {
+                   color: 'black',
+                   wheels: 4,
+                   honk: ()=>{alert(" Beep")}
+               }
+           house.garage.blackCar=car2;
+
+// Make the new car honk
+           house.garage.blackCar.honk();
+
+// Change the 'broken chair' in the kitchen to 'new chair'
+           house.areas[0].kitchen.items[1]="new chair";
+
+// If the house has a garden, console.log the name of the flower
+           if(house.garden[0])
+           {
+               console.log("Name of the flower in the garden :",house.garden[1]);
+           }
+
+       </script>
+   </body>
+</html
